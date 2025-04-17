@@ -10,7 +10,7 @@ export function Header() {
         <div className="logo">
           <Link to="/">
             <img 
-              src="/lovable-uploads/0b7d79ef-399e-4fd1-aaab-891cce4520ea.png" 
+              src="/lovable-uploads/86f8da39-04b3-4665-97c2-5f536599fe04.png" 
               alt="Franchise Logo" 
               className="h-14"
             />
@@ -19,12 +19,11 @@ export function Header() {
         
         <nav>
           <ul className="flex items-center space-x-8">
-            {/* Menu items with Arial font and -8% letter spacing */}
             <li>
               <Link 
                 to="/" 
                 className={cn(
-                  "font-['Arial'] tracking-tighter text-black font-medium",
+                  "font-['Arial'] font-bold tracking-tighter text-black",
                   "hover:text-gray-700 transition-colors",
                   "text-base"
                 )}
@@ -37,7 +36,7 @@ export function Header() {
               <Link 
                 to="/sound-kit" 
                 className={cn(
-                  "font-['Arial'] tracking-tighter text-gray-400 font-medium",
+                  "font-['Arial'] font-bold tracking-tighter text-gray-400",
                   "hover:text-gray-700 transition-colors",
                   "text-base"
                 )}
@@ -50,7 +49,7 @@ export function Header() {
               <Link 
                 to="/album" 
                 className={cn(
-                  "font-['Arial'] tracking-tighter text-gray-400 font-medium",
+                  "font-['Arial'] font-bold tracking-tighter text-gray-400",
                   "hover:text-gray-700 transition-colors",
                   "text-base"
                 )}
@@ -63,7 +62,7 @@ export function Header() {
               <Link 
                 to="/merch" 
                 className={cn(
-                  "font-['Arial'] tracking-tighter text-gray-400 font-medium",
+                  "font-['Arial'] font-bold tracking-tighter text-gray-400",
                   "hover:text-gray-700 transition-colors",
                   "text-base"
                 )}
@@ -76,7 +75,7 @@ export function Header() {
               <Link 
                 to="/members" 
                 className={cn(
-                  "font-['Arial'] tracking-tighter text-gray-400 font-medium",
+                  "font-['Arial'] font-bold tracking-tighter text-gray-400",
                   "hover:text-gray-700 transition-colors",
                   "text-base"
                 )}
@@ -92,7 +91,7 @@ export function Header() {
           <Link 
             to="/telegram" 
             className={cn(
-              "font-['Arial'] tracking-tighter underline font-medium",
+              "font-['Arial'] font-bold tracking-tighter underline",
               "hover:text-gray-700 transition-colors",
               "text-base"
             )}
@@ -105,3 +104,4 @@ export function Header() {
     </header>
   );
 }
+
