@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function Header() {
   return (
-    <header className="w-full py-6 bg-white">
+    <header className="fixed top-0 left-0 w-full py-6 bg-white z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="logo">
           <Link to="/">

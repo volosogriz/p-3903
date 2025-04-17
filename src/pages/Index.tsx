@@ -8,7 +8,7 @@ import { ContactForm } from "@/components/ContactForm";
 
 export default function Index() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pt-[200px]">
       <Header />
       <main>
         <Hero />
