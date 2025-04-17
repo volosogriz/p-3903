@@ -12,7 +12,8 @@ export function Header() {
             <img 
               src="/lovable-uploads/86f8da39-04b3-4665-97c2-5f536599fe04.png" 
               alt="Franchise Logo" 
-              className="h-14"
+              className="h-[128.14px] w-[541.23px] object-contain"
+              style={{ maxWidth: '541.23px', maxHeight: '128.14px' }}
             />
           </Link>
         </div>
@@ -104,4 +105,3 @@ export function Header() {
     </header>
   );
 }
-
