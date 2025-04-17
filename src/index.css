@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,13 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Add Arial font to ensure it's available */
+  @font-face {
+    font-family: 'Arial';
+    src: local('Arial');
+    font-weight: normal;
+    font-style: normal;
   }
 }
