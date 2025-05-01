@@ -1,59 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-export function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [logoWidth, setLogoWidth] = useState(541.23);
-  const [logoHeight, setLogoHeight] = useState(128.14);
-  
+interface HeaderProps {
+  isFirstSlide: boolean;
+}
+
+export function Header({ isFirstSlide }: HeaderProps) {
   const originalWidth = 541.23;
   const originalHeight = 128.14;
-  const targetWidth = 295;
-  const targetHeight = 69.85;
-  
-  const scrollThreshold = 200;
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const position = window.scrollY;
-      setScrollPosition(position);
-      
-      if (position <= scrollThreshold) {
-        const scaleFactor = position / scrollThreshold;
-        const newWidth = originalWidth - (originalWidth - targetWidth) * scaleFactor;
-        const newHeight = originalHeight - (originalHeight - targetHeight) * scaleFactor;
-        
-        setLogoWidth(newWidth);
-        setLogoHeight(newHeight);
-      } else {
-        setLogoWidth(targetWidth);
-        setLogoHeight(targetHeight);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const targetWidth = 158;
+  const targetHeight = 37;
 
   return (
-    <header className="fixed top-0 left-0 w-full py-6 bg-white z-50">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="logo transition-all duration-200 ease-out">
+    <header 
+      className="fixed top-0 left-0 w-full py-6 z-50"
+      style={{
+        background: 'linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0) 100%)'
+      }}
+    >
+      <div className="px-[30px] flex justify-between items-center">
+        <div className="logo">
           <Link to="/">
             <img 
               src="/lovable-uploads/86f8da39-04b3-4665-97c2-5f536599fe04.png" 
               alt="Franchise Logo" 
-              className="object-contain"
+              className="object-contain transition-all duration-500 ease-in-out"
               style={{ 
-                width: `${logoWidth}px`, 
-                height: `${logoHeight}px`,
-                maxWidth: `${logoWidth}px`, 
-                maxHeight: `${logoHeight}px`,
-                transition: 'width 0.2s ease-out, height 0.2s ease-out'
+                width: isFirstSlide ? `${originalWidth}px` : `${targetWidth}px`,
+                height: isFirstSlide ? `${originalHeight}px` : `${targetHeight}px`,
+                maxWidth: isFirstSlide ? `${originalWidth}px` : `${targetWidth}px`,
+                maxHeight: isFirstSlide ? `${originalHeight}px` : `${targetHeight}px`
               }}
             />
           </Link>
